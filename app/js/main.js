@@ -10,5 +10,7 @@ $(function () {
   $('.top__slider').slick({
     dots: true,
     arrows: false,
+    fade: true,
+    autoPlay: true,
   });
 });
