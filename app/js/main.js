@@ -11,6 +11,6 @@ $(function () {
     dots: true,
     arrows: false,
     fade: true,
-    autoPlay: true,
+    autoplay: true,
   });
 });

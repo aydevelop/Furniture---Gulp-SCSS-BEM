@@ -65,6 +65,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 10px;
   }
 
   &__btn {
@@ -299,15 +300,25 @@ body {
 }
 
 .top {
+  background-image: url(../images/slider_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__inner {
+    padding-bottom: 50px;
+    margin-top: 20px;
+  }
+
   &__slider-item {
     display: flex !important;
     align-items: center;
     margin-top: 20px;
+    justify-content: center;
   }
 
   &__slider-img {
     max-width: 703px;
-    height: 615px;
+    height: 415px;
     object-fit: cover;
   }
 
