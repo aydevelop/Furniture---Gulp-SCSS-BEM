@@ -272,3 +272,15 @@ body {
     margin-bottom: 20px;
   }
 }
+
+.top {
+  &__slider-item {
+    display: flex;
+  }
+
+  &__slider-title {
+    color: $title;
+    font-size: 100px;
+    line-height: 135px;
+  }
+}
