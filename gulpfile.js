@@ -17,7 +17,11 @@ function styles() {
 }
 
 function scripts() {
-  return src(['node_modules/jquery/dist/jquery.js', 'node_modules/slick-carousel/slick/slick.js', 'app/js/main.js'])
+  return src(
+  ['node_modules/jquery/dist/jquery.js', 
+  'node_modules/slick-carousel/slick/slick.js',
+  'node_modules/mixitup/dist/mixitup.js',  
+  'app/js/main.js'])
     .pipe(uglify())
     .pipe(concat('main.min.js'))
     .pipe(dest('app/js'))
