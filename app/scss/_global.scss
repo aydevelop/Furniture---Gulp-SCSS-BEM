@@ -1,0 +1,56 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 401px;
+  font-size: 16px;
+  line-height: 27px;
+  color: $default;
+}
+
+body {
+  overflow-x: hidden;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+.footer {
+  flex: 0 0 auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0px auto;
+
+  & > * {
+    padding: 0 15px;
+  }
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    margin: 0 15px;
+  }
+
+  button {
+    background-color: $title;
+    border: 1px solid gray;
+    width: 18px;
+    height: 18px;
+    font-size: 0;
+    border-radius: 50%;
+  }
+
+  li.slick-active {
+    button {
+      background-color: yellow;
+    }
+  }
+}
