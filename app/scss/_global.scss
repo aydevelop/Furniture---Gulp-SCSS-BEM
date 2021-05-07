@@ -14,11 +14,267 @@ body {
   flex-direction: column;
 }
 
+.header {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  &__btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .menu {
+    padding-left: 35px;
+    padding-right: 60px;
+    position: relative;
+
+    &__list {
+      display: flex;
+    }
+
+    &__list-item + .menu__list-item {
+      padding-left: 80px;
+    }
+
+    &__list-link {
+      @extend %title-font;
+      color: rgba(54, 56, 56, 0.9033);
+      line-height: 22px;
+    }
+
+    &__list-link--active {
+      padding-bottom: 4px;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        background-color: rgba($title, 0.5);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+      }
+    }
+  }
+
+  .rightside-menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 100px;
+    background-color: blue;
+    max-width: 694px;
+    background-color: #fff;
+    padding-top: 80px;
+    padding: 40px;
+    box-shadow: 0 0 6px 1px gray;
+    z-index: 100;
+    transition: all 0.5s;
+
+    &.rightside-menu--close {
+      transform: translateX(200%);
+    }
+
+    &__close {
+      position: absolute;
+      right: 50px;
+      top: 20px;
+    }
+
+    &__content {
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+      color: $title;
+      @extend %title-font;
+      font-size: 26px;
+      position: relative;
+      padding-bottom: 10px;
+
+      &::after {
+        content: '';
+        background: black;
+        height: 2px;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        max-width: 252px;
+        margin: 0 auto;
+      }
+    }
+
+    &__text {
+      margin-bottom: 20px;
+    }
+  }
+}
+
 .main {
   flex: 1 0 auto;
+  margin-top: 15px;
 }
+
 .footer {
   flex: 0 0 auto;
+  background: #dfdfdf;
+
+  &__content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__info {
+    width: 540px;
+  }
+
+  &__info-title {
+    color: $title;
+    @extend %title-font;
+    margin-bottom: 14px;
+    line-height: 23px;
+  }
+
+  &__info-text {
+    margin-bottom: 16px;
+    max-width: 475px;
+  }
+
+  &__form {
+    &-input {
+      padding: 6px 10px 6px 18px;
+      border-radius: 21px;
+      border: 1px;
+      width: 368px;
+      background-color: transparent;
+      border: 1px solid rgba($title, 0.7);
+
+      &::placeholder {
+        font-weight: 500;
+      }
+    }
+
+    &-button {
+      background-color: $title;
+      border: none;
+      color: white;
+      border-radius: 21px;
+      padding: 6px 12px;
+      min-width: 160px;
+      margin-left: 7px;
+    }
+  }
+
+  &__info-email {
+    font-weight: 600;
+    color: $title;
+    padding-left: 22px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 0;
+      background-image: url('../images/envelope.svg');
+      background-repeat: no-repeat;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__form {
+    margin-top: 22px;
+  }
+
+  &__social {
+    width: 125px;
+    margin-right: auto;
+    margin-left: 100px;
+  }
+
+  &__social-link,
+  &__menu-link {
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #707070;
+    position: relative;
+    padding-left: 25px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__social-link {
+    &--facebook::before {
+      background-image: url(../images/facebook.svg);
+    }
+
+    &--instagram::before {
+      background-image: url(../images/instagram.svg);
+      top: 5px;
+    }
+
+    &--pinterest::before {
+      background-image: url(../images/pinterest.svg);
+    }
+
+    &--whatsapp::before {
+      background-image: url(../images/whatsapp.svg);
+      top: 4px;
+    }
+
+    &--youtube::before {
+      background-image: url(../images/youtube.svg);
+      top: 5px;
+    }
+  }
+
+  &__social-item,
+  &__menu-item {
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  &__menu {
+    margin-right: 60px;
+    width: 125px;
+  }
+
+  &__copyright {
+    background-color: $title;
+    color: #a1a1a1;
+    text-align: center;
+    padding: 40px 10px 40px;
+  }
 }
 
 .container {
@@ -52,5 +308,28 @@ body {
     button {
       background-color: yellow;
     }
+  }
+}
+
+.breadcrumbs {
+  background: rgba(#dfdfdf, 0.5);
+  padding: 13px 14px;
+
+  &__link {
+    font-size: 14px;
+    color: $default;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item::after {
+    content: '/';
+    margin: 0 10px;
+  }
+
+  &__item:last-child::after {
+    display: none;
   }
 }
