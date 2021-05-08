@@ -446,3 +446,13 @@
     margin-top: -3px;
   }
 }
+
+.partners {
+  padding: 45px 0 45px;
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 70px;
+  }
+}
