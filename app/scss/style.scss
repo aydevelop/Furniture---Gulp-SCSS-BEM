@@ -557,3 +557,45 @@
     cursor: pointer;
   }
 }
+
+.contact-slider {
+  padding-bottom: 50px;
+
+  &__link {
+    position: relative;
+    &:hover {
+      .contact-slider__title {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  &__title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(#fff, 0.6);
+    color: $title;
+    @extend %title-font;
+    line-height: 22px;
+    padding: 0 30px;
+    text-align: center;
+    opacity: 0;
+  }
+
+  .slick-dots {
+    margin-top: 40px;
+  }
+}
