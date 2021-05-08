@@ -266,7 +266,6 @@
   &__items {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     grid-gap: 30px 35px;
   }
 
@@ -281,6 +280,17 @@
   &__item:first-child {
     grid-column: span 2;
     grid-row: span 2;
+  }
+
+  &.gallery-page {
+    .gallery__item img {
+      max-height: 1200px;
+    }
+
+    .gallery__item:nth-child(8) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
   }
 }
 
