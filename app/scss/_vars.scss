@@ -9,3 +9,11 @@ $title: #363636;
 %brd {
   border: 5px solid red;
 }
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}

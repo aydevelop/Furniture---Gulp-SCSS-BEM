@@ -7,22 +7,31 @@ const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
 
+const allStyles = [
+  'app/scss/style.scss',
+  'node_modules/slick-carousel/slick/slick.scss',
+  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.scss',
+];
+
+const allScripts = [
+  'node_modules/jquery/dist/jquery.js',
+  'node_modules/slick-carousel/slick/slick.js',
+  'node_modules/mixitup/dist/mixitup.js',
+  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
+  'app/js/main.js',
+];
+
 function styles() {
-  return src('app/scss/style.scss')
+  return src(allStyles)
+    .pipe(concat('style.min.css'))
     .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'] }))
     .pipe(scss({ outputStyle: 'compressed' }))
-    .pipe(concat('style.min.css'))
     .pipe(dest('app/css'))
     .pipe(browserSync.stream());
 }
 
 function scripts() {
-  return src(
-  ['node_modules/jquery/dist/jquery.js', 
-  'node_modules/slick-carousel/slick/slick.js',
-  'node_modules/mixitup/dist/mixitup.js', 
-  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',  
-  'app/js/main.js'])
+  return src(allScripts)
     .pipe(uglify())
     .pipe(concat('main.min.js'))
     .pipe(dest('app/js'))
