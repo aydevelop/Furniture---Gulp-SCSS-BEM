@@ -599,3 +599,39 @@
     margin-top: 40px;
   }
 }
+
+.blog {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .aside {
+    width: 350px;
+
+    &__search {
+      position: relative;
+    }
+
+    &__search-input {
+      padding: 6px 45px 6px 18px;
+      border: 1px solid rgba($title, 0.7);
+      border-radius: 20px;
+      width: 100%;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 27px;
+        color: $default;
+      }
+    }
+
+    &__search-btn {
+      position: absolute;
+      right: 0;
+      top: 12px;
+      right: 20px;
+    }
+  }
+}
