@@ -22,10 +22,6 @@ $(function () {
     slidesToScroll: 8,
   });
 
-  $('.article-slider__box').slick({
-    fade: true,
-  });
-
   var mixer = mixitup('.gallery__inner', {
     load: {
       filter: '.living',
